@@ -4,7 +4,7 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
     // Get input
     $target = $_REQUEST[ 'ip' ];
     
-    $target = str_replace( array_keys( $substitutions ), $substitutions, $target );
+    if filter($target, FILTER_FLAG_IPV4) {
 
     // Determine OS and execute the ping command.
     if( stristr( php_uname( 's' ), 'Windows NT' ) ) {
@@ -14,6 +14,8 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
     else {
         // *nix
         $cmd = shell_exec( 'ping  -c 4 ' . $target );
+    }
+        
     }
 
     // Feedback for the end user
