@@ -19,6 +19,7 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
     }
 
     // Feedback for the end user
+    echo "<pre>Voici le resultat du ping vers : {$target}</pre>";
     echo "<pre>{$cmd}</pre>";
 }
 
