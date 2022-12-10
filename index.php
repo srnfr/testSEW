@@ -3,8 +3,9 @@
 if( isset( $_POST[ 'Submit' ]  ) ) {
     // Get input
     $target = $_REQUEST[ 'ip' ];
-    
-    if filter($target, FILTER_FLAG_IPV4) {
+
+    ## Check validity of IP
+    if (filter_var($target, FILTER_VALIDATE_IP)) {
 
     // Determine OS and execute the ping command.
     if( stristr( php_uname( 's' ), 'Windows NT' ) ) {
