@@ -1,3 +1,9 @@
+<html>
+<head>
+<title>PHP Ping</title>
+</head>
+<body>
+
 <?php
 
 if( isset( $_POST[ 'Submit' ]  ) ) {
@@ -24,4 +30,16 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
     echo "<pre>{$cmd}</pre>";
 }
 
+else {
+    // Form
+    echo '<form action="" method="post">';
+    echo 'IP: <input type="text" name="ip" /><br />';
+    echo '<input type="submit" name="Submit" value="Ping" />';
+    echo '</form>';
+}
+
 ?>
+
+</body>
+</html>
+
